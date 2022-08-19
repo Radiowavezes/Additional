@@ -1,0 +1,47 @@
+# _myDict = {n: n*2 for n in range(5)}
+# print(_myDict)
+# _myList = [[i, j] for i, j in enumerate(range(1, 10, 2))]
+# print(_myList)
+
+# questions = ['name', 'quest', 'favorite color']
+# answers = ['lancelot', 'the holy grail', 'blue']
+# for q, a in zip(questions, answers):
+#     print(f'What is your {q}?  It is {a}.')
+
+# for i in reversed(range(1, 10)):
+#     print(i)
+
+# basket = ['apple', 'orange', 'apple', 'pear', 'orange', 'banana']
+# for f in sorted(set(basket)):
+#     print(f)
+
+# vec = [[1,2,3], [4,5,6], [7,8,9]]
+# print(list(i for j in vec for i in j))
+
+# matrix = [
+#         [1, 2, 3, 4],
+#         [5, 6, 7, 8],
+#         [9, 10, 11, 12],
+#     ]
+# print(list(j[i] for j in matrix for i in range(len(j))))
+# transposed = []
+# for i in range(len(matrix) + 1):
+#     transposed.append([j[i] for j in matrix])
+# print(transposed)
+
+# multiples_gen = list(i for i in range(30) if i % 3 == 0)
+# print(multiples_gen)
+
+# x = 10
+# for i in [1,2,3,4,5]:
+#     if i % 2 == 0:
+#         break
+#     x -= i
+# else:
+#     x = 10
+# print(x)
+
+
+#sorting by value when value is list of values
+# a = {i: j  for i, j in sorted(employees_dict.items(), key=lambda x: x[1][1])}
+# b = {i: j  for i, j in sorted(employees_dict.items(), key=lambda x: x[1][0])}

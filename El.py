@@ -1,30 +1,17 @@
-nato_dict = {'A': 'Alpha', 
-             'B': 'Bravo',
-             'C': 'Charlie',
-             'D': 'Delta',
-             'E': 'Echo',
-             'F': 'Foxtrot',
-             'G': 'Golf',
-             'H': 'Hotel',
-             'I': 'India',
-             'J': 'Juliett',
-             'K': 'Kilo',
-             'L': 'Lima',
-             'M': 'Mike',
-             'N': 'November',
-             'O': 'Oscar',
-             'P': 'Papa',
-             'Q': 'Quebec',
-             'R': 'Romeo',
-             'S': 'Sierra',
-             'T': 'Tango',
-             'U': 'Uniform',
-             'V': 'Victor',
-             'W': 'Whiskey',
-             'X': 'X-ray',
-             'Y': 'Yankee',
-             'Z': 'Zulu'}
-
-word = input('Input the word: ').upper()
-print(*[nato_dict.get(i) for i in word])
-
+infile = open('input.txt', 'r', encoding='utf-8')
+persons = {}
+for line in infile:
+    temp = line.split()
+    person, good, volume = temp[0], temp[1], int(temp[2])
+    if person in persons:
+        if good in persons[person]:
+            persons[person][good] += volume
+        else:
+            persons[person][good] = volume
+    else:
+        persons[person] = {good: volume}
+infile.close()
+for person in sorted(persons):
+    print(person, ':', sep="")
+    for good in sorted(persons[person]):
+        print(good, persons[person][good])

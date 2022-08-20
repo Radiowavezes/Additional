@@ -34,7 +34,7 @@ def reversed_dict(any_dict):
 nato_to_aldict = reversed_dict(nato_dict)
 
 cond = int(input('''
-             if you want to translate
+             if you want to translate 
              the word to Nato dict, press 1.
              To translate words from Nato dict,
              press 2: 

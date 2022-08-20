@@ -25,6 +25,23 @@ nato_dict = {'A': 'Alpha',
              'Y': 'Yankee',
              'Z': 'Zulu'}
 
-word = input('Input the word: ').upper()
-print(*[nato_dict.get(i) for i in word])
+def reversed_dict(any_dict):
+    reversed_dict = {}
+    for i, j in any_dict.items():
+        reversed_dict[j.upper()] = i
+    return reversed_dict
+    
+nato_to_aldict = reversed_dict(nato_dict)
 
+cond = int(input('''
+             if you want to translate
+             the word to Nato dict, press 1.
+             To translate words from Nato dict,
+             press 2: 
+             '''))
+if cond == 1:
+    word = input('Input the word: ').upper()
+    print(*[nato_dict.get(i) for i in word])
+else:
+    word = (input('Input the words separating them with spaces and commas: ').upper().split(', '))
+    print(*[nato_to_aldict.get(i) for i in word if nato_to_aldict.get(i) != None], sep='')

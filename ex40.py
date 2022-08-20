@@ -27,4 +27,3 @@ nato_dict = {'A': 'Alpha',
 
 word = input('Input the word: ').upper()
 print(*[nato_dict.get(i) for i in word])
-

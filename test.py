@@ -45,3 +45,16 @@
 #sorting by value when value is list of values
 # a = {i: j  for i, j in sorted(employees_dict.items(), key=lambda x: x[1][1])}
 # b = {i: j  for i, j in sorted(employees_dict.items(), key=lambda x: x[1][0])}
+
+# def print_tree(n): #-> str
+#     for i in range(n):
+#         for j in range(n - i):
+#             print('1', end='')
+#         for k in range(2 * i + 1):
+#             print('*', end='')
+#         print()
+
+# print(print_tree(7))
+
+
+print(3^8)

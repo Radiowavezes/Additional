@@ -1,4 +1,4 @@
-with open('input.txt', 'r', encoding='utf8') as inF:
+with open('emphasises_input.txt', 'r', encoding='utf8') as inF:
     vacWords, lines = int(inF.readline()), inF.readlines()
     vac, val, mistakes = set(), set(), 0
 for w in range(vacWords):

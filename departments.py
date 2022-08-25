@@ -83,4 +83,4 @@ for key, val in DEPARTMENTS.items():
         employee_param['birthdate'] = dictionary.get('birthdate')
         employee_param["department"] = key
         employees_list.append(employee_param)
-print(len(employees_list))
+print(employees_list)

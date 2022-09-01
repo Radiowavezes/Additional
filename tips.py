@@ -85,3 +85,5 @@
 #         print("Next entry.")
 #         print()
 # print("The reciprocal of", entry, "is", r)
+
+print(sum(range(1, 5)))

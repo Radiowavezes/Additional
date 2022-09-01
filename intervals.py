@@ -1,30 +1,33 @@
 def sum_of_intervals(intervals):
-    intervals = sorted(intervals, key=lambda x: x[0])
 
-    reg = 1
-    result_list = []
-    start = intervals[0][0]
-    ammount = 0
-    while reg < len(intervals):
-        if intervals[reg][0] <= intervals[reg - 1][1]:
-            reg += 1
+    uniq_intervals = set(intervals)
+    uniq_intervals = sorted(uniq_intervals, key=lambda x: x[0])
+    result_intervals = []
+    start = int(uniq_intervals[0][0])
+    stop = int(uniq_intervals[0][1])
+    counter = 0
+
+    for interval in uniq_intervals[1:]:
+        if int(interval[0]) not in range(start, stop):
+            result_intervals.append((start, stop))
+            start = int(interval[0])
+            if start == int(uniq_intervals[-1][0]):
+                stop = int(uniq_intervals[-1][1])
+                result_intervals.append((start, stop))
         else:
-            result_list.append((start, intervals[reg - 1][1]))
-            start = intervals[reg][0]
-            reg += 1
-        if reg == len(intervals):
-            if len(result_list) == 0:
-                result_list.append((start, (max(intervals, key=lambda x: x[1]))[1]))
-                ammount = (result_list[0][1] - result_list[0][0])
-            else:
-                result_list.append(intervals[reg - 1])
-                for i in result_list:
-                    ammount += (i[1] - i[0])
-    if reg == len(intervals):
-        ammount = (intervals[0][1] - intervals[0][0])
-
-    return ammount
+            stop = int(interval[1])
+    if len(result_intervals) > 0:
+        for start, stop in result_intervals:
+            while start < stop:
+                counter += 1
+                start += 1
+    else:
+        while start < stop:
+            counter += 1
+            start += 1
+    
+    return counter
 
 
-intervals = [(1, 4), (7, 10), (3, 5)]
+intervals = [(1, 5), (6, 10)]
 print(sum_of_intervals(intervals))

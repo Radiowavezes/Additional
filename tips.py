@@ -42,7 +42,7 @@
 # print(x)
 
 
-#sorting by value when value is list of values
+# sorting by value when value is list of values
 # a = {i: j  for i, j in sorted(employees_dict.items(), key=lambda x: x[1][1])}
 # b = {i: j  for i, j in sorted(employees_dict.items(), key=lambda x: x[1][0])}
 

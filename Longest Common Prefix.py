@@ -16,9 +16,11 @@ def roman(strs):
                     if matches == len(strs):
                         res_str += letter
                 else:
+                    # Break the inner loop...
                     break
-            else:
+            else: # Continue if the inner loop wasn't broken.
                 continue
+            # Inner loop was broken, break the outer.
             break
     return res_str
 

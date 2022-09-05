@@ -86,4 +86,5 @@
 #         print()
 # print("The reciprocal of", entry, "is", r)
 
-print(sum(range(1, 5)))
+
+print(bool(3 != 1 != 3))

@@ -1,4 +1,4 @@
-with open('input.txt') as inf:
+with open('family_input.txt') as inf:
     n = inf.readline()
     family = {line.split()[0]: line.split()[1] for line in inf.readlines()}
     

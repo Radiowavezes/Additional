@@ -1,7 +1,7 @@
 import time
 
 
-def my_decorator(f):
+def time_decorator(f):
     def wrapper(*args, **kwargs):
         start = time.time()
         result = f(*args, **kwargs)

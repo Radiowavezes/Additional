@@ -87,4 +87,61 @@
 # print("The reciprocal of", entry, "is", r)
 
 
-print(bool(3 != 1 != 3))
+# def zero(a=None): return 0 if not a else a(0)
+# def one(a=None): return 1 if not a else a(1)
+# def two(a=None): return 2 if not a else a(2)
+# def three(a=None): return 3 if not a else a(3)
+# def four(a=None): return 4 if not a else a(4)
+# def five(a=None): return 5 if not a else a(5)
+# def six(a=None): return 6 if not a else a(6)
+# def seven(a=None): return 7 if not a else a(7)
+# def eight(a=None): return 8 if not a else a(8)
+# def nine(a=None): return 9 if not a else a(9)
+# def plus(y): return lambda x: x + y
+# def minus(y): return lambda x: x - y 
+# def times(y): return lambda x: x * y
+# def divided_by(y): return lambda x: int(x / y)
+
+
+# print((nine(divided_by(two()))))
+
+# zero=lambda f=None: f(0) if f else 0
+# one=lambda f=None:f(1) if f else 1
+# two=lambda f=None: f(2) if f else 2
+# three=lambda f=None: f(3) if f else 3
+# four=lambda f=None: f(4) if f else 4
+# five=lambda f=None: f(5) if f else 5
+# six=lambda f=None: f(6) if f else 6
+# seven=lambda f=None: f(7) if f!=None else 7
+# eight=lambda f=None: f(8) if f else 8
+# nine=lambda f=None: f(9) if f else 9
+# plus=lambda a: lambda b: b+a
+# minus=lambda a: lambda b: b-a
+# times=lambda a: lambda b: b*a
+# divided_by=lambda a: lambda b: b/a
+
+# def plus(y): return lambda x: x+y
+# def minus(y): return lambda x: x-y
+# def times(y): return lambda x: x*y
+# def divided_by(y): return lambda x: x//y
+
+# # Number function generator
+# def nf_gen(n):
+#      return lambda f=None: n if not f else f(n)
+
+# zero, one, two, three, four, five, six, seven, eight, nine = map(nf_gen, range(10))
+
+# from operator import add, sub, mul, floordiv
+
+# def constant(n):
+#     def number(fun=None):
+#         return fun(n) if fun else n
+#     return number
+
+# def operator(op):
+#     def fun(operand):
+#         return lambda x: op(x, operand)
+#     return fun
+
+# zero, one, two, three, four, five, six, seven, eight, nine = map(constant, range(10))
+# plus, minus, times, divided_by = map(operator, [add, sub, mul, floordiv])

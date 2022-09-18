@@ -145,3 +145,23 @@
 
 # zero, one, two, three, four, five, six, seven, eight, nine = map(constant, range(10))
 # plus, minus, times, divided_by = map(operator, [add, sub, mul, floordiv])
+
+# def mix(s1, s2):   
+#     a = 'abcdefghijklmnopqrstuvwxyz'
+#     result = []
+#     for let in a:
+#         if s1.count(let) > 1 or s2.count(let) > 1:
+#             if s1.count(let) > s2.count(let):
+#                 result.append('1:' + s1.count(let)*let)
+#             elif s1.count(let) < s2.count(let):
+#                 result.append('2:' + s2.count(let)*let)
+#             else:
+#                 result.append('=:' + s2.count(let)*let)
+#     result.sort()
+#     result.sort(key=len, reverse=True)
+#     return '/'.join(result)
+        
+
+# s1 = "my&friend&Paul has heavy hats! &"
+# s2 = "my friend John has many many friends &"
+# print(mix(s1, s2))

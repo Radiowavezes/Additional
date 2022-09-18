@@ -165,3 +165,8 @@
 # s1 = "my&friend&Paul has heavy hats! &"
 # s2 = "my friend John has many many friends &"
 # print(mix(s1, s2))
+
+# def rgb_to_hex(r, g, b):
+#   return ('{:X}{:X}{:X}').format(r, g, b)
+
+# print(rgb_to_hex(255, 250, 1))

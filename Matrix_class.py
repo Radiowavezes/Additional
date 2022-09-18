@@ -4,10 +4,7 @@ from copy import deepcopy as dc
 
 
 class MatrixError(BaseException):
-    def __init__(self, Matrix, next):
-        self.matrix1 = Matrix
-        self.matrix2 = next
-
+    pass
 
 class Matrix:
     def __init__(self, li):

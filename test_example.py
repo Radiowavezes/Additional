@@ -8,4 +8,4 @@ def test_example():
     first_name = 'John'
     second_name = 'Smith'
 
-    assert full_name(first_name, second_name) == 'JohnSmith'
+    assert full_name(first_name, second_name) == 'John Smith'

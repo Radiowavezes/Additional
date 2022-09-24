@@ -170,3 +170,6 @@
 #   return ('{:X}{:X}{:X}').format(r, g, b)
 
 # print(rgb_to_hex(255, 250, 1))
+
+step = 25 % any([2, 3, 5, 7]) == 0
+print(step)

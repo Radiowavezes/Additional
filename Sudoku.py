@@ -92,5 +92,4 @@ sudoku = [
 ]
 
 sudo_bool = zip(*sudoku)
-print(*sudo_bool)
 my_obj_sudoku = Sudoku(sudo_bool)

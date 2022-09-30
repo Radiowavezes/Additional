@@ -11,6 +11,7 @@ class RomanNumerals:
         }
 
     to_roman_dict = {
+        0: '',
         1: 'I',
         4: 'IV',
         5: 'V',
@@ -28,7 +29,8 @@ class RomanNumerals:
     
     def to_roman(self, val):
         expression = [int(num) * 10 ** dec for dec, num in (enumerate(str(val)[::-1]))]
-        print('expression',expression)
+        while len(expression) < 4:
+            expression.append(0)
         expression.reverse()
         result = ''
         for number in expression:

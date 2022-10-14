@@ -27,7 +27,7 @@ class Vertex:
 
     def get_neighbor(self, other):
         """Get the distance (edge weight) to an adjacent node (neighbor)"""
-        return self._neighbors.get(other, None)
+        return self._neighbors.get(other)
 
     def set_neighbor(self, other, weight=0):
         """Set the distance (add an edge) to an adjacent node (neighbor)"""

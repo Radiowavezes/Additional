@@ -47,4 +47,4 @@ def find_sum(s, T, eps):
     return max(L, key=SetWithSum.sum)
 
 
-print(find_sum(fds, sums, eps=0))
+print(find_sum(fds, sums, eps=0.0001))

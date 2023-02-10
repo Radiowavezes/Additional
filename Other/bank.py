@@ -1,19 +1,23 @@
-f = open('bank_input.txt', 'r')
-f.readline()
-sums = float(f.readline())
-f.readline()
-fd = [line.strip() for line in f]
-fds = list(map(float, fd))
+import time
+
+file = open('bank_input.txt', 'r')
+file.readline()
+tg = (file.readline())
+mytable = tg.maketrans(",", ".")
+target = float(tg.translate(mytable))
+file.readline()
+terms = [float(line.strip().translate(mytable)) for line in file]
+file.close()
 
 
 class SetWithSum:
-    def __init__(self, s):
-        self._items = list(s)
-        self._sum = sum(s)
+    def __init__(self, terms):
+        self._items = list(terms)
+        self._sum = sum(terms)
 
-    def add(self, x):
-        self._items.append(x)
-        self._sum += x
+    def add(self, num):
+        self._items.append(num)
+        self._sum += num
         return self
 
     def clone(self):
@@ -29,22 +33,22 @@ class SetWithSum:
         return f"<{self._sum},{self._items}>"
 
 
-def find_sum(s, T, eps):
-    s = list(sorted(s))
-    L = [SetWithSum([s[0]])]
-    n = len(s)
-    delta = eps*T/n
-    for x in s[1:]:
-        U = L
-        U.extend([ l.clone().add(x) for l in L])
-        U = sorted(U, key=SetWithSum.sum)
-        y = U[0]
-        L = [y]
-        for z in U:
-            if (y.sum()+delta) < z.sum() and z.sum() <= T:
-                y = z
-                L.append(y)
-    return max(L, key=SetWithSum.sum)
+def find_sum(terms, target, eps):
+    terms = list(sorted(terms))
+    result = [SetWithSum([terms[0]])]
+    delta = eps * target / len(terms)
+    for digit in terms[1:]:
+        twin = result
+        twin.extend([i.clone().add(digit) for i in result])
+        twin = sorted(twin, key=SetWithSum.sum)
+        term = twin[0]
+        result = [term]
+        for num in twin:
+            if (term.sum() + delta) < num.sum() and num.sum() <= target:
+                term = num
+                result.append(term)
+    return max(result, key=SetWithSum.sum)
 
-
-print(find_sum(fds, sums, eps=0.0001))
+start = time.time()
+print(find_sum(terms, target, eps=0))
+print(round((time.time() - start) // 60), 'minutes', round((time.time() - start) % 60), 'seconds')

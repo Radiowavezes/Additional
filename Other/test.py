@@ -1,10 +1,5 @@
-from math import factorial as f
-from itertools import combinations
-
-l = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
-c = f(len(l)) / (f(3) * f(len(l) - 3))
-sum = 0
-for j in combinations(l, 3):
-    sum += 1
-print(sum==c)
+for i in range(1, 1387):
+    for j in range(1, 1387):
+        if i * 47 + j * 160 == 223728 and i + j == 1387:
+            print(i, 'x 47', j, 'x 160')
+print('done')
